@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-about",
+      "settings": {
+      }
+    },
+    "form": {
+      "type": "about-form",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form"
+  ]
+}
