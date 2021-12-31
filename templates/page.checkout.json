@@ -1,0 +1,19 @@
+{
+  "layout": "theme_demo",
+  "sections": {
+    "main": {
+      "type": "main-checkout",
+      "settings": {
+      }
+    },
+    "content": {
+      "type": "checkout-content",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "content"
+  ]
+}
