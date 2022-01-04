@@ -1,3 +1,58 @@
-<div class="huan-test">
-    This is request of customer
-</div>
+{{ 'product-request.scss.css' | asset_url | stylesheet_tag }}
+
+<div class="block-request">
+    <div class="request-title-area">
+      <h3 class="request-title">リクエスト</h3>
+      <div class="request-description">
+        <p>この商品についてのリクエストを送信できます。</p>
+      </div>
+    </div>
+    <ul class="request-icons">
+      <li>
+        <a href="javascript:void(0)" data-event-attr-setting="event,/shop/g/gVX013794/,mousedown,着用画像を見たい" class="clicked">
+          <p class="request-icon">
+            <img class="off" src="https://allu-official.com/img/usr/common/ic_request_01_off.png" alt="着用画像を見たい">
+            <img class="on" src="https://allu-official.com/img/usr/common/ic_request_01_on.png" alt="着用画像を見たい">
+          </p>
+          <span>着用画像を見たい</span>
+          <p class="request-finish-txt" style="opacity: 0;">送信されました。</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" data-event-attr-setting="event,/shop/g/gVX013794/,mousedown,傷や汚れの写真を見たい">
+          <p class="request-icon">
+            <img class="off" src="https://allu-official.com/img/usr/common/ic_request_02_off.png" alt="傷や汚れの写真を見たい">
+            <img class="on" src="https://allu-official.com/img/usr/common/ic_request_02_on.png" alt="傷や汚れの写真を見たい">
+          </p>
+          <span>傷や汚れの写真を見たい</span>
+          <p class="request-finish-txt">送信されました。</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" data-event-attr-setting="event,/shop/g/gVX013794/,mousedown,状態について詳しく知りたい">
+          <p class="request-icon">
+            <img class="off" src="https://allu-official.com/img/usr/common/ic_request_03_off.png" alt="状態について詳しく知りたい">
+            <img class="on" src="https://allu-official.com/img/usr/common/ic_request_03_on.png" alt="状態について詳しく知りたい">
+          </p>
+          <span>状態について詳しく知りたい</span>
+          <p class="request-finish-txt">送信されました。</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" data-event-attr-setting="event,/shop/g/gVX013794/,mousedown,動画で見たい">
+          <p class="request-icon">
+            <img class="off" src="https://allu-official.com/img/usr/common/ic_request_05_off.png" alt="動画で見たい">
+            <img class="on" src="https://allu-official.com/img/usr/common/ic_request_05_on.png" alt="動画で見たい">
+          </p>
+          <span>動画で見たい</span>
+          <p class="request-finish-txt">送信されました。</p>
+        </a>
+      </li>
+    </ul>
+    <ul class="request-notice">
+      <li>※リクエストが多いものから順次検討させていただきます。</li>
+      <li>※反映は予告なしに実施いたします。是非毎日チェックしてみてください。</li>
+      <li>※その他のリクエストについてはお気軽にお問い合わせください。</li>
+    </ul>
+  </div>
+  
