@@ -1,0 +1,114 @@
+.block-request {
+  margin: 70px 0;
+}
+
+.block-request *{
+  margin: 0;
+}
+
+.request-title-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+h3.request-title {
+  padding: 0;
+  margin-right: 20px;
+}
+
+.request-description {
+  font-size: 14px;
+  color: #8d8d8d;
+  font-weight: normal;
+}
+
+.request-icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.request-icons li {
+  width: 50%;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.request-icons a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  color: #222222;
+}
+
+.request-icons .request-icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.request-icons img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: .5s ease;
+}
+
+.request-icons img.on {
+  opacity: 0;
+}
+
+.request-icons a.clicked img.off {
+  opacity: 0;
+}
+
+.request-icons a.clicked img.on {
+  opacity: 1;
+}
+
+.request-icons span {
+  margin-left: 15px;
+}
+
+.request-icons a .request-finish-txt {
+  opacity: 0;
+  transition: .5s ease;
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  z-index: 3;
+  display: block;
+  background: rgba(0, 0, 0, .8);
+  border-radius: 4px;
+  padding: 8px 5px 5px 5px;
+  text-align: center;
+  width: 130px;
+  color: #fff;
+}
+
+.request-icons a .request-finish-txt::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  border: 5px transparent solid;
+  border-bottom: 10px
+px
+rgba(0, 0, 0, .8) solid;
+  transform: translate(-50%, 0);
+  z-index: 999;
+}
+
+.request-notice {
+  margin-top: 5px;
+}
+
+.request-notice li {
+  font-size: 12px;
+  color: #8d8d8d;
+}
