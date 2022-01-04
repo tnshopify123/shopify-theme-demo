@@ -2,12 +2,12 @@
   "layout": "theme_demo",
   "sections": {
     "main": {
-      "type": "main-checkout",
+      "type": "main-filter",
       "settings": {
       }
     },
     "content": {
-      "type": "checkout-content",
+      "type": "filter-content",
       "settings": {
       }
     }

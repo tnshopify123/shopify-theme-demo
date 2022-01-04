@@ -1,0 +1,136 @@
+<style>
+  .test-content {
+    background-color: rgb(245, 255, 255);
+  }
+  .list-study {
+    list-style: upper-alpha;
+  }
+  .title-study {
+    color: blue;
+  }
+</style>
+
+<div class="test-content">
+  <ol class="list-study">
+    <li>
+      <h2 class="title-study">Array filter</h2>
+      <!-- Creat array -->
+      {% assign string = '1,2,3,4,5,6,7,8,9' %} {% assign array = string |
+      split: ',' %}
+      <div>array = [{{ array | join: ', ' }}]</div>
+      <div class="content-study">
+        <ol>
+          <li class="sub-study">
+            <h3>Join:</h3>
+            <div class="sub-study-">
+              <code class="code-symbol">\{\{ array | join: '-' \}\}</code>:
+              {{ array | join: '-' }}
+            </div>
+          </li>
+          <li class="sub-study">
+            <h3>First:</h3>
+            <div class="sub-study-">
+              <div>
+                <code class="code-symbol">\{\{ array | first \}\}</code>:
+                {{ array | first }}
+              </div>
+              <div>
+                {% if array.first == '1' %} So sánh
+                <code class="code-symbol">@% if array.first == '1' %@</code>
+                đúng. {% endif %}
+              </div>
+            </div>
+          </li>
+          <li class="sub-study">
+            <h3>Last:</h3>
+            <div class="sub-study-">
+              <div>
+                <code class="code-symbol">\{\{ array | last \}\}</code>:
+                {{ array | last }}
+              </div>
+              <div>
+                {% if array.last == '9' %} So sánh
+                <code class="code-symbol">@% if array.last == '9' %@</code>
+                đúng. {% endif %}
+              </div>
+            </div>
+          </li>
+          <li class="sub-study">
+            <h3>Concat:</h3>
+            <div class="sub-study-">
+              {% assign array2 = '10,11,12' | split: ',' %} {% assign array3 =
+              array | concat: array2 %}
+              <div>array2 = [{{ array2 | join: ', ' }}]</div>
+              <div>
+                - systax:
+                <code class="code-symbol"
+                  >@% assign array3 = array | concat: array2 %@</code
+                >
+              </div>
+              <div>
+                array3 = array | concat: array2 = [{{ array3 | join: ', ' }}]
+              </div>
+            </div>
+          </li>
+          <li class="sub-study">
+            <h3>Map:</h3>
+            <div class="sub-study-"></div>
+          </li>
+          <li class="sub-study">
+            <h3>Reverse:</h3>
+            <div class="sub-study-">
+              <code class="code-symbol">\{\{ array | reverse \}\}</code> = [{{
+                array | reverse | join: ', '
+              }}]
+            </div>
+          </li>
+          <li class="sub-study">
+            <h3>Size:</h3>
+            <div class="sub-study-">
+              <div>
+                <code class="code-symbol">\{\{ array.size \}\}</code> =
+                {{ array.size }}
+              </div>
+              <div>
+                <code class="code-symbol">\{\{ array | size \}\}</code> =
+                {{ array | size }}
+              </div>
+            </div>
+          </li>
+          <li class="sub-study">
+            <h3>sort:</h3>
+            <div class="sub-study-"></div>
+          </li>
+          <li class="sub-study">
+            <h3>where:</h3>
+            <div class="sub-study-"></div>
+          </li>
+          <li class="sub-study">
+            <h3>uniq:</h3>
+            <div class="sub-study-">
+              {% assign array4 = '1,1,1,2,3,2,3,5,4,6,7,4,2' | split: ',' %}
+              <div>array4 = [{{ array4 | join: ', ' }}]</div>
+              <div>
+                <code class="code-symbol">@% array4 | uniq %@</code> = [{{
+                  array4 | uniq | join: ', '
+                }}]
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </li>
+  </ol>
+</div>
+
+<script>
+  var symbols = document.querySelectorAll('code.code-symbol');
+  console.log(symbols);
+  symbols.forEach((symbol) => {
+    symbol.innerHTML = symbol.innerText
+      .replaceAll('\\\{\\\{', '\{\{')
+      .replaceAll('\\\}\\\}', '\}\}')
+      .replaceAll(/@%/g, '\{\%')
+      .replaceAll(/%@/g, '\%\}');
+  });
+</script>
