@@ -4,9 +4,6 @@
     <a href="{{ routes.root_url }}">{{ 'general.breadcrumbs.home' | t }}</a>
   </li>
   {% endunless %}
-  <li class="huan-test">
-    <a href="/pages/filter">Filter</a>
-  </li>
   {% for link in linklists[section.settings.menu].links %}
     {% if link.links != blank %}
       {% assign parent_index = forloop.index %}
