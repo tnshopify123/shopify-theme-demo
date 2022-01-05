@@ -123,7 +123,7 @@
       if (!this.classList.contains('clicked')) {
         const dataRequestId = this.getAttribute('data-request-id');
 
-        fetch('http://127.0.0.1:8081/api/product/{{product.id}}/request', {
+        fetch('https://eb96-14-0-27-37.ngrok.io/api/product/{{product.id}}/request?host=aHV5aHVhbi5teXNob3BpZnkuY29tL2FkbWlu&shop=huyhuan.myshopify.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
