@@ -70,12 +70,10 @@
         const requestTitle = document.createElement('span');
         const requestTxtFinish = document.createElement('p');
 
-        requestLink.href = 'javascript:void(0)';
-        requestLink.setAttribute('data-request-id', iconData['request-id']);
-        requestLink.setAttribute(
-          'data-request-title',
-          iconData['request-title']
-        );
+
+        this.attr(requestLink, 'href', 'javascript:void(0)')
+        .attr(requestLink, 'data-request-id', iconData['request-id'])
+        .attr(requestLink, 'data-request-title', iconData['request-title'])
 
         this.attr(requestIcon, 'class', 'request-icon')
 
