@@ -136,6 +136,11 @@
           .then((json) => {
             console.log(json);
             this.classList.add('clicked');
+            const requestTxtFinish = this.querySelector('p.request-finish-txt');
+            requestTxtFinish.classList.add('active');
+            setTimeout(function(){
+              requestTxtFinish.classList.remove('active');
+            }, 1500)
           })
           .catch((e) => {
             console.error(e);
