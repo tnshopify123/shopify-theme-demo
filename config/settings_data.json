@@ -98,7 +98,8 @@
           "slide-0": {
             "type": "image",
             "settings": {
-              "link": "https:\/\/source.unsplash.com\/random\/800x600"
+              "slide": "shopify:\/\/shop_images\/api.png",
+              "link": ""
             }
           },
           "slide-1": {
