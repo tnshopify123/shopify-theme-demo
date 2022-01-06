@@ -3,7 +3,33 @@
   "sections": {
     "main": {
       "type": "main-filter",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "link": "xin chào bạn! ahihii"
+          }
+        },
+        "title-2": {
+          "type": "title",
+          "settings": {
+            "link": "xin chào bạn! title2"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {
+            "link": "Hello you!"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "title-2",
+        "content"
+      ],
       "settings": {
+        "title": "This is filter page"
       }
     },
     "content": {

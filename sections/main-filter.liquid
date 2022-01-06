@@ -1,15 +1,26 @@
 <link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
-
+<style>
+  .test-blocks{
+    background-color: aquamarine;
+    min-height: 100px;
+  }
+</style>
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
 <div class="page-width page-width--narrow">
   <h1 class="main-page-title page-title h0">
-    {{ page.title | escape }} Page
+    {{ page.title | escape }} Page: {{ section.settings.title }}
   </h1>
   <div class="rte">
     {{ page.content }}
+    <div class="test-blocks">
+      {%- for block in section.blocks -%}
+      Type: {{ block.type }} <br>
+      Link: {{ block.settings.link }} <br>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
@@ -17,6 +28,106 @@
 {
   "name": "t:sections.main-page.name",
   "tag": "section",
-  "class": "spaced-section"
+  "class": "spaced-section-test",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "title",
+      "settings": [
+      {
+        "type": "text",
+        "id": "link",
+        "label": {
+          "cs": "Nabídka",
+          "da": "Menu",
+          "de": "Menü",
+          "en": "Test",
+          "es": "Menú",
+          "fi": "Valikko",
+          "fr": "Menu",
+          "it": "Menu",
+          "ja": "メニュー",
+          "ko": "메뉴",
+          "nb": "Meny",
+          "nl": "Menu",
+          "pl": "Menu",
+          "pt-BR": "Menu",
+          "pt-PT": "Menu",
+          "sv": "Meny",
+          "th": "เมนู",
+          "tr": "Menü",
+          "vi": "Menu",
+          "zh-CN": "菜单",
+          "zh-TW": "選單"
+        },
+        "default": "Test setting of block"
+      }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.main-filter.blocks.content.name",
+      "settings": [
+      {
+        "type": "text",
+        "id": "link",
+        "label": {
+          "cs": "Nabídka",
+          "da": "Menu",
+          "de": "Menü",
+          "en": "Test",
+          "es": "Menú",
+          "fi": "Valikko",
+          "fr": "Menu",
+          "it": "Menu",
+          "ja": "メニュー",
+          "ko": "메뉴",
+          "nb": "Meny",
+          "nl": "Menu",
+          "pl": "Menu",
+          "pt-BR": "Menu",
+          "pt-PT": "Menu",
+          "sv": "Meny",
+          "th": "เมนู",
+          "tr": "Menü",
+          "vi": "Menu",
+          "zh-CN": "菜单",
+          "zh-TW": "選單"
+        },
+        "default": "Test setting of block"
+      }
+      ]
+    }
+  ],
+  "settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": {
+      "cs": "Nabídka",
+      "da": "Menu",
+      "de": "Menü",
+      "en": "Test",
+      "es": "Menú",
+      "fi": "Valikko",
+      "fr": "Menu",
+      "it": "Menu",
+      "ja": "メニュー",
+      "ko": "메뉴",
+      "nb": "Meny",
+      "nl": "Menu",
+      "pl": "Menu",
+      "pt-BR": "Menu",
+      "pt-PT": "Menu",
+      "sv": "Meny",
+      "th": "เมนู",
+      "tr": "Menü",
+      "vi": "Menu",
+      "zh-CN": "菜单",
+      "zh-TW": "選單"
+    },
+    "default": "Test"
+  }
+  ]
 }
 {% endschema %}

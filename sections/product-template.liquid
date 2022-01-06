@@ -197,8 +197,6 @@
           </button>
 
           {% if section.settings.enable_payment_button %}
-          
-          <!-- <div><a class="btn-checkout" href="/pages/checkout">Mua ngay</a></div> -->
             {{ form | payment_button }}
           {% endif %}
         </div>
@@ -214,7 +212,11 @@
     {% if section.settings.social_sharing_products %}
       {% include 'social-sharing' %}
     {% endif %}
-    {% include 'product-request' %}
+    
+    {% if section.settings.more_request_product %}
+      {% render 'product-request', iconsRequest: section.blocks, requestUrl: section.settings.api_url_request %}
+    {% endif %}
+
   </div>
 </div>
 
@@ -286,7 +288,64 @@
     "zh-TW": "產品"
   },
   "class": "product-template-section",
+  "blocks": [
+  {
+    "type": "product-icon-request",
+    "name": "t:sections.product-template.blocks.product-icon-request.name",
+    "settings": [
+    {
+      "type": "number",
+      "id": "request-id",
+      "label": {
+        "en": "Icon id"
+      }
+    },
+    {
+      "type": "text",
+      "id": "request-title",
+      "label": {
+        "en": "Icon title"
+      }
+    },
+    {
+      "type": "url",
+      "id": "src-on",
+      "label": {
+        "en": "Icon src on"
+      }
+    },
+    {
+      "type": "url",
+      "id": "src-off",
+      "label": {
+        "en": "Icon src off"
+      }
+    },
+    {
+      "type": "text",
+      "id": "request-finish-txt",
+      "label": {
+        "en": "Icon active text"
+      }
+    }
+    ]
+  }],
   "settings": [
+  {
+    "type": "url",
+    "id": "api_url_request",
+    "label": {
+      "en": "URL of api send request product"
+    }
+  },
+  {
+    "type": "checkbox",
+    "id": "more_request_product",
+    "default": true,
+    "label": {
+      "en": "Is show request product"
+    }
+  },
     {
       "type": "checkbox",
       "id": "product_image_zoom_enable",

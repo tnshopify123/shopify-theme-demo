@@ -1,0 +1,49 @@
+{
+  "settings_schema": {
+    "main-filter": {
+      "name": "Blog post",
+      "blocks": {
+        "title": {
+          "name": "Title",
+          "settings": {
+            "blog_show_date": {
+              "label": "Show date"
+            },
+            "blog_show_author": {
+              "label": "Show author"
+            }
+          }
+        },
+        "content": {
+          "name": "Content"
+        }
+      }
+    },
+
+    "product-template": {
+      "name": "Product detail page",
+      "blocks": {
+        "product-icon-request": {
+          "name": "Product icon info",
+          "settings": {
+            "request-id": {
+              "label": "Icon id"
+            },
+            "request-title": {
+              "label": "Icon title"
+            },
+            "src-on": {
+              "label": "Image active"
+            },
+            "src-off": {
+              "label": "Image not active"
+            },
+            "request-finish-txt": {
+              "label": "Text show then active"
+            }
+          }
+        }
+      }
+    }
+  }
+}
