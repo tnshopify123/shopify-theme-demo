@@ -26,6 +26,9 @@
         "product-icon-request": {
           "name": "Product icon info",
           "settings": {
+            "request-method": {
+              "label": "Icon request method"
+            },
             "request-id": {
               "label": "Icon id"
             },

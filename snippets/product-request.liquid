@@ -1,4 +1,4 @@
-{% assign apiUrl = requestUrl | replace: '{id}', product.id %}
+<!-- {% assign apiUrl = requestUrl | replace: '{id}', product.id %} -->
 {{ 'product-request.scss.css' | asset_url | stylesheet_tag }}
 <script
   src="{{ 'product-detail-request.js' | asset_url }}"
@@ -12,9 +12,10 @@
       <p>この商品についてのリクエストを送信できます。</p>
     </div>
   </div>
-  <ul class="request-icons" data-api-url="{{ apiUrl }}">
-    {%- for block in iconsRequest -%} {% render "product-request-item",
-    iconRequest: block.settings, requestUrl: requestUrl %} {% endfor %}
+  <ul class="request-icons" data-api-url="{{ requestUrl }}">
+    {%- for block in iconsRequest -%} 
+      {% render "product-request-item", iconRequest: block.settings %}
+    {% endfor %}
   </ul>
   <ul class="request-notice">
     <li>※リクエストが多いものから順次検討させていただきます。</li>

@@ -6,6 +6,7 @@
         "product-icon-request-1": {
           "type": "product-icon-request",
           "settings": {
+            "request-method": "GET",
             "request-id": 1,
             "request-title": "着用画像を見たい",
             "src-on": "https://allu-official.com/img/usr/common/ic_request_01_on.png",
@@ -16,6 +17,7 @@
         "product-icon-request-2": {
           "type": "product-icon-request",
           "settings": {
+            "request-method": "POST",
             "request-id": 2,
             "request-title": "傷や汚れの写真を見たい",
             "src-on": "https://allu-official.com/img/usr/common/ic_request_02_on.png",
@@ -26,6 +28,7 @@
         "product-icon-request-3": {
           "type": "product-icon-request",
           "settings": {
+            "request-method": "PUT",
             "request-id": 3,
             "request-title": "状態について詳しく知りたい",
             "src-on": "https://allu-official.com/img/usr/common/ic_request_03_on.png",
@@ -36,7 +39,19 @@
         "product-icon-request-4": {
           "type": "product-icon-request",
           "settings": {
+            "request-method": "PATCH",
             "request-id": 4,
+            "request-title": "動画で見たい",
+            "src-on": "https://allu-official.com/img/usr/common/ic_request_04_on.png",
+            "src-off": "https://allu-official.com/img/usr/common/ic_request_04_off.png",
+            "request-finish-txt": "送信されました。"
+          }
+        },
+        "product-icon-request-5": {
+          "type": "product-icon-request",
+          "settings": {
+            "request-method": "DELETE",
+            "request-id": 5,
             "request-title": "動画で見たい",
             "src-on": "https://allu-official.com/img/usr/common/ic_request_04_on.png",
             "src-off": "https://allu-official.com/img/usr/common/ic_request_04_off.png",
@@ -48,11 +63,12 @@
         "product-icon-request-1",
         "product-icon-request-2",
         "product-icon-request-3",
-        "product-icon-request-4"
+        "product-icon-request-4",
+        "product-icon-request-5"
       ],
       "settings": {
         "more_request_product": true,
-        "api_url_request": "https://e1f9-14-0-27-37.ngrok.io/api/product/{id}/request?host=aHV5aHVhbi5teXNob3BpZnkuY29tL2FkbWlu&shop=huyhuan.myshopify.com"
+        "api_url_request": "https://e1f9-14-0-27-37.ngrok.io/api/test-method/"
       }
     }
   },
