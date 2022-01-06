@@ -1,153 +1,24 @@
+{% assign apiUrl = requestUrl | replace: '{id}', product.id %}
 {{ 'product-request.scss.css' | asset_url | stylesheet_tag }}
+<script
+  src="{{ 'product-detail-request.js' | asset_url }}"
+  defer="defer"
+></script>
 
-<product-detail-request class="block-request">
+<div class="block-request">
   <div class="request-title-area">
     <h3 class="request-title">リクエスト</h3>
     <div class="request-description">
       <p>この商品についてのリクエストを送信できます。</p>
     </div>
   </div>
-  <ul class="request-icons">
+  <ul class="request-icons" data-api-url="{{ apiUrl }}">
+    {%- for block in iconsRequest -%} {% render "product-request-item",
+    iconRequest: block.settings, requestUrl: requestUrl %} {% endfor %}
   </ul>
   <ul class="request-notice">
     <li>※リクエストが多いものから順次検討させていただきます。</li>
     <li>※反映は予告なしに実施いたします。是非毎日チェックしてみてください。</li>
     <li>※その他のリクエストについてはお気軽にお問い合わせください。</li>
   </ul>
-  <script type="application/json" id="ProductRequestIconsJson">
-    [
-      {
-        "request-id": 1,
-        "request-title": "着用画像を見たい",
-        "src-on": "https://allu-official.com/img/usr/common/ic_request_01_on.png",
-        "src-off": "https://allu-official.com/img/usr/common/ic_request_01_off.png",
-        "request-finish-txt": "送信されました。"
-      },
-      {
-        "request-id": 2,
-        "request-title": "傷や汚れの写真を見たい",
-        "src-on": "https://allu-official.com/img/usr/common/ic_request_02_on.png",
-        "src-off": "https://allu-official.com/img/usr/common/ic_request_02_off.png",
-        "request-finish-txt": "送信されました。"
-      },
-      {
-        "request-id": 3,
-        "request-title": "状態について詳しく知りたい",
-        "src-on": "https://allu-official.com/img/usr/common/ic_request_03_on.png",
-        "src-off": "https://allu-official.com/img/usr/common/ic_request_03_off.png",
-        "request-finish-txt": "送信されました。"
-      },
-      {
-        "request-id": 4,
-        "request-title": "状態について詳しく知りたい",
-        "src-on": "https://allu-official.com/img/usr/common/ic_request_04_on.png",
-        "src-off": "https://allu-official.com/img/usr/common/ic_request_04_off.png",
-        "request-finish-txt": "送信されました。"
-      }
-    ]
-  </script>
-</product-detail-request>
-
-<script>
-  class ProductDetailRequests extends HTMLElement {
-    constructor() {
-      super();
-      this.addRequestItem();
-    }
-
-    addRequestItem() {
-      const requestIcons = this.querySelector('ul.request-icons');
-      const requestIconsData = this.querySelector('#ProductRequestIconsJson');
-      const iconsData = JSON.parse(requestIconsData.innerHTML);
-      requestIconsData.remove();
-
-      iconsData.forEach((iconData) => {
-        const requestItem = document.createElement('li');
-        const requestLink = document.createElement('a');
-        const requestIcon = document.createElement('p');
-        const requestImageOn = document.createElement('img');
-        const requestImageOff = document.createElement('img');  
-        const requestTitle = document.createElement('span');
-        const requestTxtFinish = document.createElement('p');
-
-
-        this.attr(requestLink, 'href', 'javascript:void(0)')
-        .attr(requestLink, 'data-request-id', iconData['request-id'])
-        .attr(requestLink, 'data-request-title', iconData['request-title'])
-
-        this.attr(requestIcon, 'class', 'request-icon')
-
-        this.attr(requestImageOn, 'class', 'on')
-        .attr(requestImageOn, 'src', iconData['src-on'])
-        .attr(requestImageOn, 'alt', iconData['request-title'])
-
-        this.attr(requestImageOff, 'class', 'off')
-        .attr(requestImageOff, 'src', iconData['src-off'])
-        .attr(requestImageOff, 'alt', iconData['request-title'])
-
-        this.appendNode(requestIcon, requestImageOn)
-        .appendNode(requestIcon, requestImageOff)
-
-        requestTitle.innerText = iconData['request-title'];
-
-        requestTxtFinish.classList.add('request-finish-txt');
-        requestTxtFinish.innerText = iconData['request-finish-txt'];
-
-        this.appendNode(requestLink, requestIcon)
-        .appendNode(requestLink, requestTitle)
-        .appendNode(requestLink, requestTxtFinish)
-        
-        requestLink.addEventListener('click', this.onIconClick);
-
-        requestItem.append(requestLink);
-
-        requestIcons.append(requestItem);
-
-      });
-    }
-
-    appendNode(parentNode, childNode){
-      parentNode.append(childNode);
-      return this;
-    }
-
-    attr(element, attrName, value){
-      if(!value) {
-        return element.getAttribute(attrName);
-      }
-      element.setAttribute(attrName, value);
-      return this;
-    }
-
-    onIconClick() {
-      if (!this.classList.contains('clicked')) {
-        const dataRequestId = this.getAttribute('data-request-id');
-
-        fetch('https://eb96-14-0-27-37.ngrok.io/api/product/{{product.id}}/request?host=aHV5aHVhbi5teXNob3BpZnkuY29tL2FkbWlu&shop=huyhuan.myshopify.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            iconId: dataRequestId,
-          }),
-        })
-          .then((response) => response.json())
-          .then((json) => {
-            console.log(json);
-            this.classList.add('clicked');
-            const requestTxtFinish = this.querySelector('p.request-finish-txt');
-            requestTxtFinish.classList.add('active');
-            setTimeout(function(){
-              requestTxtFinish.classList.remove('active');
-            }, 1500)
-          })
-          .catch((e) => {
-            console.error(e);
-          });
-      }
-    }
-  }
-
-  customElements.define('product-detail-request', ProductDetailRequests);
-</script>
+</div>
