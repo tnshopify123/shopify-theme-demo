@@ -60,11 +60,11 @@
         }
       },
       "block_order": [
-        "product-icon-request-1",
+        "product-icon-request-5",
         "product-icon-request-2",
         "product-icon-request-3",
         "product-icon-request-4",
-        "product-icon-request-5"
+        "product-icon-request-1"
       ],
       "settings": {
         "more_request_product": true,
