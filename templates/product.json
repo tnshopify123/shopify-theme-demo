@@ -9,8 +9,8 @@
             "request-method": "GET",
             "request-id": 1,
             "request-title": "着用画像を見たい",
-            "src-on": "https://allu-official.com/img/usr/common/ic_request_01_on.png",
-            "src-off": "https://allu-official.com/img/usr/common/ic_request_01_off.png",
+            "src-on": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_01_on.png",
+            "src-off": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_01_off.png",
             "request-finish-txt": "送信されました。"
           }
         },
@@ -20,8 +20,8 @@
             "request-method": "POST",
             "request-id": 2,
             "request-title": "傷や汚れの写真を見たい",
-            "src-on": "https://allu-official.com/img/usr/common/ic_request_02_on.png",
-            "src-off": "https://allu-official.com/img/usr/common/ic_request_02_off.png",
+            "src-on": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_02_on.png",
+            "src-off": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_02_off.png",
             "request-finish-txt": "送信されました。"
           }
         },
@@ -31,8 +31,8 @@
             "request-method": "PUT",
             "request-id": 3,
             "request-title": "状態について詳しく知りたい",
-            "src-on": "https://allu-official.com/img/usr/common/ic_request_03_on.png",
-            "src-off": "https://allu-official.com/img/usr/common/ic_request_03_off.png",
+            "src-on": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_03_on.png",
+            "src-off": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_03_off.png",
             "request-finish-txt": "送信されました。"
           }
         },
@@ -42,8 +42,8 @@
             "request-method": "PATCH",
             "request-id": 4,
             "request-title": "動画で見たい",
-            "src-on": "https://allu-official.com/img/usr/common/ic_request_04_on.png",
-            "src-off": "https://allu-official.com/img/usr/common/ic_request_04_off.png",
+            "src-on": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_04_on.png",
+            "src-off": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_04_off.png",
             "request-finish-txt": "送信されました。"
           }
         },
@@ -53,8 +53,8 @@
             "request-method": "DELETE",
             "request-id": 5,
             "request-title": "動画で見たい",
-            "src-on": "https://allu-official.com/img/usr/common/ic_request_04_on.png",
-            "src-off": "https://allu-official.com/img/usr/common/ic_request_04_off.png",
+            "src-on": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_04_on.png",
+            "src-off": "https:\/\/allu-official.com\/img\/usr\/common\/ic_request_04_off.png",
             "request-finish-txt": "送信されました。"
           }
         }
@@ -67,8 +67,8 @@
         "product-icon-request-1"
       ],
       "settings": {
-        "more_request_product": true,
-        "api_url_request": "https://e1f9-14-0-27-37.ngrok.io/api/test-method/"
+        "api_url_request": "https:\/\/5956-14-0-27-37.ngrok.io\/api\/test-method\/",
+        "more_request_product": true
       }
     }
   },
