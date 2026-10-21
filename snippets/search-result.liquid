@@ -5,7 +5,7 @@
     {%- assign max_width = 350  -%}
     {%- assign max_height = 500 -%}
 
-    {%- include 'image-logic' with width: max_width, height: max_height -%}
+    {%- include 'image-logic' with width, width: max_width, height: max_height -%}
 
 
     {% comment %}
@@ -67,3 +67,14 @@
 </div>
 
 <hr>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- include 'image-logic' with width: max_width, height: max_height -%}"
+  to: "{%- include 'image-logic' with width, width: max_width, height: max_height
+    -%}"
+  position: 175..253
+{% endcomment %}

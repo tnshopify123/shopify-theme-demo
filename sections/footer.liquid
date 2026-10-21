@@ -57,7 +57,7 @@
               {{ block.settings.subtext }}
             {% endif %}
           </div>
-          {% include 'newsletter-form' with button: 'secondary' %}
+          {% include 'newsletter-form' with button, button: 'secondary' %}
         {% endcase %}
       </div>
     {% endfor %}
@@ -1338,3 +1338,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'newsletter-form' with button: 'secondary' %}"
+  to: "{% include 'newsletter-form' with button, button: 'secondary' %}"
+  position: 2276..2340
+{% endcomment %}

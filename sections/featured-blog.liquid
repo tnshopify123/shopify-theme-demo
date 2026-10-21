@@ -44,7 +44,7 @@
                 {%- assign max_width = width | plus: 0 -%}
                 {%- assign max_height = height | plus: 0 -%}
 
-                {%- include 'image-logic' with width: max_width, height: max_height -%}
+                {%- include 'image-logic' with width, width: max_width, height: max_height -%}
 
                 {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                 <a class="article__featured-link" href="{{ article.url }}">
@@ -435,3 +435,14 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- include 'image-logic' with width: max_width, height: max_height -%}"
+  to: "{%- include 'image-logic' with width, width: max_width, height: max_height
+    -%}"
+  position: 1715..1793
+{% endcomment %}

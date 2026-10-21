@@ -43,7 +43,7 @@
               {%- assign max_width = 690 -%}
               {%- assign max_height = 1000 -%}
 
-              {%- include 'image-logic' with width: max_width, height: max_height -%}
+              {%- include 'image-logic' with width, width: max_width, height: max_height -%}
 
               {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
               <div id="{{ img_wrapper_id }}" class="lazyload__image-wrapper{% unless image == featured_image %} hide{% endunless %}" data-image-id="{{ image.id }}" style="max-width: {{ max_width }}px">
@@ -135,11 +135,11 @@
           </button>
         </div>
       {% else %}
-        {% capture "form_class" -%}
+        {% capture form_class -%}
           addToCartForm{% if section.settings.enable_payment_button %} addToCartForm--payment-button{% endif %}
         {%- endcapture %}
 
-      {%- capture "form_id" -%}addToCartForm-{{ section.id }}{%- endcapture -%}
+      {%- capture form_id -%}addToCartForm-{{ section.id }}{%- endcapture -%}
 
       {% form 'product', product, class:form_class, id:form_id, data-product-form: '' %}
           {{ form | payment_terms }}
@@ -495,3 +495,20 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- include 'image-logic' with width: max_width, height: max_height -%}"
+  to: "{%- include 'image-logic' with width, width: max_width, height: max_height
+    -%}"
+  position: 2255..2333
+- from: '{% capture "form_class" -%}'
+  to: "{% capture form_class -%}"
+  position: 6256..6281
+- from: '{%- capture "form_id" -%}'
+  to: "{%- capture form_id -%}"
+  position: 6427..6450
+{% endcomment %}

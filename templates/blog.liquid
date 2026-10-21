@@ -32,7 +32,7 @@
               {%- assign width = 650 -%}
               {%- assign height = 1000 -%}
 
-              {%- include 'image-logic' with width: width, height: height -%}
+              {%- include 'image-logic' with width, width: width, height: height -%}
 
               {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
               <div class="lazyload__image-wrapper" data-image-id="{{ image.id }}" style="max-width: {{ max_width }}px">
@@ -94,3 +94,13 @@
 </div>
 
 {% endpaginate %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- include 'image-logic' with width: width, height: height -%}"
+  to: "{%- include 'image-logic' with width, width: width, height: height -%}"
+  position: 1418..1488
+{% endcomment %}

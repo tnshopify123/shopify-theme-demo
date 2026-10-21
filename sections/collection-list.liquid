@@ -47,7 +47,7 @@
     {% if index > 0 %}
       {% for block in section.blocks %}
         {%- assign featured = block.settings.collection %}
-        {% include 'featured-collection' with width: width, height: height %}
+        {% include 'featured-collection' with width, width: width, height: height %}
       {% endfor %}
     {% comment %}
     {% else %}
@@ -229,3 +229,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'featured-collection' with width: width, height: height %}"
+  to: "{% include 'featured-collection' with width, width: width, height: height %}"
+  position: 2084..2160
+{% endcomment %}
